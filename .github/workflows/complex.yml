@@ -1,26 +1,26 @@
 
-name: Complex
+name: Complex  # Name of Workflow
 
-on: push
+on: push  # Triggering Event
 
-jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-    - run: date
-  windows:
-    runs-on: window-latest
-    steps:
-    - run: date
-  macos:
-    runs-on: macos-latest 
-    steps:
-    - run: date
-  depends:
+jobs:  # Add Jobs
+  ubuntu:  # name of first Job
+    runs-on: ubuntu-latest  # specify a system for runner 
+    steps:  # job step
+    - run: date  # command of the step (- run) [print date]
+  windows:  # name of second Job
+    runs-on: window-latest  # specify a system for runner 
+    steps:  # job step
+    - run: date  # command of the step (- run)
+  macos:  # name of third Job
+    runs-on: macos-latest  # specify a system for runner  
+    steps:  # job step
+    - run: date  # command of the step (- run)
+  depends:   # name of fourth Job
     needs: [ubuntu, windows, macos]
-    runs-on: macos-latest 
-    steps:
-    - run: date
+    runs-on: macos-latest  # specify a system for runner  
+    steps:  # job step
+    - run: date  # command of the step (- run)
   
   
   
